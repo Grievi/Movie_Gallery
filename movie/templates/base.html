@@ -1,3 +1,4 @@
+{% load bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <title>Document</title>
+    {% block styles%}
+    {% bootstrap_css%}
+    {% endblock %}
 </head>
 <body>
     {% block content %}
     
+    
+    {% endblock %}
+
+    {% block scripts%}
+    {% bootstrap_javascript %}
     {% endblock %}
 </body>
 </html>
