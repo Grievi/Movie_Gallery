@@ -26,7 +26,7 @@ def user_login(request):
 def user_logout(request):
 
     logout(request)
-    messages.success(request, "You have logged out")
+    messages.success(request, ("You have logged out"))
     return redirect('home')
 
 def user_signup(request):
@@ -39,10 +39,10 @@ def user_signup(request):
             password = form.cleaned_data['password1']
             user= authenticate(username=username, password=password)
             login(request, user)
-            messages.success(request,"Account created successfully")
+            messages.success(request,("Account created successfully"))
 
             return redirect('home')
             
     else:
         form=UserCreationForm()
-        return render(request, 'authentication/signup.html', {"message": message,"form": form})
+    return render(request, 'authentication/signup.html', {"message": message,"form": form})
